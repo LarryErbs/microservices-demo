@@ -1,0 +1,11 @@
+minikube start --memory 12288 --cpus 4
+sudo sysctl -w vm.max_map_count=262144 
+
+kubectl create -f deploy/kubernetes/manifests-logging
+kubectl create -f deploy/kubernetes/manifests-monitoring
+kubectl create -f deploy/kubernetes/manifests/00-sock-shop-ns.yaml -f deploy/kubernetes/manifests
+kubectl create -f deploy/kubernetes/autoscaling -f deploy/kubernetes/manifests-loadtest
+kubectl create -f deploy/kubernetes/manifests-jaeger 
+
+minikube addons enable metrics-server
+kubectl get --raw /apis/metrics.k8s.io/
