@@ -4,8 +4,8 @@ sudo sysctl -w vm.max_map_count=262144
 kubectl create -f deploy/kubernetes/manifests-logging
 kubectl create -f deploy/kubernetes/manifests-monitoring
 kubectl create -f deploy/kubernetes/manifests/00-sock-shop-ns.yaml -f deploy/kubernetes/manifests
-kubectl create -f deploy/kubernetes/autoscaling -f deploy/kubernetes/manifests-loadtest
 kubectl create -f deploy/kubernetes/manifests-jaeger 
+kubectl create -f deploy/kubernetes/autoscaling -f deploy/kubernetes/manifests-loadtest
 
 minikube addons enable metrics-server
-kubectl get --raw /apis/metrics.k8s.io/
+kubectl get --raw /apis/metrics.k8s.do
