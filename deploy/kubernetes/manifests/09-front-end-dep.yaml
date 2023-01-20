@@ -19,11 +19,11 @@ spec:
           image: weaveworksdemos/front-end:0.3.12
           resources:
             limits:
-              cpu: 100m
-              memory: 100Mi
+              cpu: 150m
+              memory: 150Mi
             requests:
-              cpu: 100m
-              memory: 100Mi
+              cpu: 150m
+              memory: 150Mi
           ports:
             - containerPort: 8079
           env:
